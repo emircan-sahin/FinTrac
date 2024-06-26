@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import MySafeAreaView from '../components/MySafeAreaView';
 
 type SplashScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Splash'>;
 
@@ -10,15 +11,15 @@ interface SplashScreenProps {
 
 const SplashScreen: React.FC<SplashScreenProps> = ({ navigation }) => {
   useEffect(() => {
-    setTimeout(() => {
-      navigation.replace('Home');
-    }, 2000);
+    // setTimeout(() => {
+    //   navigation.replace('Home');
+    // }, 2000);
   }, []);
 
   return (
-    <View style={styles.container}>
+    <MySafeAreaView>
       <Text>Splash Screen</Text>
-    </View>
+    </MySafeAreaView>
   );
 };
 
